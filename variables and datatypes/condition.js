@@ -50,3 +50,14 @@ console.log(companiesarr)
 
 let replace = companiesarr.splice(1,1,"ola")
 console.log(companiesarr)
+
+// function 
+function myname(){
+    console.log("Hey! my name is Vivek!")
+    console.log("I am learning JS! currently")
+}
+
+// function 
+function myname(msg){
+    console.log(msg)
+}

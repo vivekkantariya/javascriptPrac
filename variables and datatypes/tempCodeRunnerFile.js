@@ -1,8 +1,7 @@
+let arrf = [78,80,90,50,94,96,92,95,89,98]
 
-// P3 
-let companiesarr = ["bloomberg","microsoft","uber","google","IBM","netflix"]
+let marksfilter = arrf.filter((val) => {
+    return val > 90;
+})
 
-console.log(companiesarr)
-console.log(companiesarr.shift())
-let pushed = companiesarr.push("amazon")
-console.log(pushed)
+console.log(marksfilter)
