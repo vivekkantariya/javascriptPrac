@@ -1,0 +1,247 @@
+what is javascript?
+    - JS is a programming language. use it to give instructions to the computer.
+    - JS is a Dynamicaaly Typed language : means you don't want to declare the datatype the JS automatically detects it called runtime interpreted
+
+    input(code) -> computer -> output
+
+alert : popups on the window 
+    alert("Hello world!");
+    this will create an small window and display hello world!
+
+console.log("Hello JS!") : is used to print a message in the console
+    ';' is used to indicate to terminate the line 
+
+you can only use JS via HTML in JS otherwise you cannot becuase JS can directly connect via browser so only you can do with HTML 
+
+- variables are the containers for the data 
+
+    name="Toanu";
+    age = 18;
+    price = 150.20;
+    isfollow = true;
+
+- null is a special value means nothing, absence of an object 
+ 
+- undefined that means nothing is defined 
+        by default when the variable is declared  but the value is not assigned to it it will print undefined
+
+    the difference is in null the thing is defined but in undefined the thing is not defined
+
+Note: you can declare the variable this way but its a bad practice always use let, var or const before the variable to declare them.
+
+var : the oldest way to declare variable, can be re-declared & updated. A global scope variable
+        var age = 10;
+        var age = 18;
+        console.log(age)    prints 18
+        not a good way to write a code also confusing when reviewing the code.
+
+let : variable cannot be re-declared but can be updated. a block scope variable
+        let age = 18;
+        age = 25;
+        console.log(age); 25
+
+const : cannot be re-declared or updated. A block scope variable
+        const age = 24;
+        console.log(age);
+        now the const is fixed thorughout the code 
+
+Data types in JS: 
+    - Number, String, Boolean, undefined, null, bigint, symbol
+
+    - primtive and non-primitive
+
+    - primitive consist 7 data types 
+
+    - non-primitive consist Objects.
+
+        to see the type of datatype use 'typeof' keyword 
+
+    the bigint and symbol not used frequently in the JS used rarely in JS
+
+    let x = BigInt('123');
+        123n
+    let y = Symbol("hello")
+        Symbol(hello)
+
+    Objects = collectios of values
+        - stored in key:value pair 
+        - to declare an object use const object name 
+
+            const student = {
+                name : "Vivek ",
+                age : 20,
+                cgpa : 7.10,
+                pass : true,
+            };
+
+        - to access the student keys like name age cgpa and pass you can do like this 
+            student["name"]
+        - it will return vivek
+        - also can access with dot operator "." student.age
+
+    we can update const object keys 
+
+    - if you add anything with stirng like "abc" + 123 it will concatenate 
+
+Operators & conditional Statements:
+    - Arithmetic Operators:
+        +,-,*,/,modulo(%), exponent(**), icrement(++), decrement(--)    
+
+        modulo means remainder
+    
+    - ASsignment Operators:
+        +=,-=,*=,/=,**=
+
+    - Comparison Operators:
+        equal to ==
+        equal to & type ===        also checks the datatype
+        not equal to !=
+        equal to & type !==
+
+    - Logical Operators:
+        Logical AND && - true when both true otherwise true
+        Logical or || - only false when both are false otherwise true
+        Logical NOT ! - 
+
+Conditional Statements - to implement some condition in the code 
+
+    if Statements: 
+        if (expression){
+            code
+        }
+    if else Statements:
+        if (expression){
+            code
+        }else{
+            code
+        }
+    else if Statements:
+        if (expression){
+            code
+        }else if {
+            code
+        }else{
+            code
+        }
+
+Ternary Operators: contains 3 operands
+    a?b:c
+    a - is the condition 
+        if it is true b is executed 
+        if it is false c is executed
+
+    age > 18 ? "adult":"child"
+
+    simpler and compact if else 
+
+Note: MDN is the official Documentation of JS, HTML, CSS
+
+Loops in JS :
+    loops are used to execute a peice of code again & again 
+
+    - for loop 
+        for(let i = 1,i<=5,i++){
+            code
+        };  
+    - while(condition){
+        code
+    };
+    - do while 
+    - do {
+        code
+    }while(condition);
+    - for of loop
+        for string and arrays
+        let str = "apnacollege"
+        
+        for (let i of str){
+            console.log(i)
+        }
+
+        no need of decalaration and updation
+    
+    - for in loop
+        for objects and arrays
+        for (let i in objectname){
+                code
+        }
+
+        returns all the keys of object
+
+string : sequesnce of characters to represent text   
+
+    str = "vivek"
+    str.lenth
+
+template literals:
+    A way to have embeded expression in string 
+
+        use backtick ` ` to represent
+
+    String interpolation :
+        to create stirngs by doing substitution of placeholders 
+
+        `String text ${expression} stirng text `
+
+        the thing or the expression which is wrote on {} is interpolation   
+
+        we can also calculate the values in the interpolation 
+
+escape characters length will count 1 like /n,/t
+
+string methods in JS : built in methods in string    
+    str.toUpperCase()
+    str.toLowerCase()
+    str.trim()  removes whitespaces
+    .slice(start,end)
+    .concat(stirng)
+    .replace(string,newstring)      if contains multiple same characters it will replace first one 
+    .replaceall(string,newstring)   change all same characters 
+    .charat(idx)
+
+    all the methods just return the view they cannot update the original string 
+    they always return new string they don't change the original one 
+
+    because strings are immutable in JS 
+
+arrays in JS : Collection of items
+
+    syntax : let arr = [];
+
+    used when we want to store same thing of differnet value in same location 
+    like marks of students you dont want create same variable of marks for every student
+
+    IN jS array is a type of object internally when you do typeof arr it will return object 
+    so array is object IN JS 
+    
+    arrays are mutable you can change via particular indexing 
+
+looping over an array
+    for in 
+    for of 
+
+Array methods in JS :
+    push(): add to end  
+        .push("value");
+        changes original array 
+        
+    pop: delete from end and return 
+        .pop("value")
+        changes original array 
+
+    tostring: converts array and string 
+        dont change original array 
+
+    concat : joins multiple arrays & returns result 
+
+    unshift : adds in the start of the arr and return
+        changes original array 
+    
+    shift : delete from start & return
+        changes original array 
+
+    slice : returns a piece of code 
+        cannot change the original array
+
+    splice : change original array 
+        splice(startindex, deleteelementno, addelementno);
