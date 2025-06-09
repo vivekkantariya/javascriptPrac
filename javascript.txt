@@ -367,3 +367,165 @@ some most usefull array methods:
         like sum, avg, smallest , largest 
 
         where inputs are more but we need to return only 1 value    
+
+the 3 muskeeters of web-developement :
+    HTML- (STRUCTURE) - hyper text markup language 
+
+    CSS - (STYLE) - cascading style sheets
+        <style> - connects HTML with css
+        the link tag is used to connect css with html 
+
+    JS - (LOGIC) - javascript
+        <script> - connects HTML with JS
+
+the alert and the prompt holds until it is clicked. it will nt execute the further instruction 
+
+to use the css or apply the css 
+types of ways to implement the css :
+    - with tag name 
+        body{
+            background-color:blue;
+        }
+
+it's not a good practice to write the code in the html file of its css and jS 
+    put both css and js in separate file and after call them.
+    - it also increase the readability of the code and a lot of other benefits also 
+    - the browser caching will load faster this way 
+
+window object:
+    the window object represent and open window in a browser.
+        - it is browser's object(not javascript)
+        - it is automatically created by browser
+        - it is a global object wiht lots of properties and methods.
+        - contains a lot of properties and methods and data 
+
+        all the methods are the part of the window object 
+            
+            window.console.log
+            window.alert 
+
+        so the methods are the part of the window object you can also write this way 
+
+what is DOM?
+    - when a webpage is loaded, the browser creates a Documnet Object Model (DOM) of the page.
+    simply means we can access all the HTML code with it like all the tags, properties etc
+    and this object is a special object name document and it is available in the window object
+    - basically the documnet object contains all the HTML code so you can refer in the JS and do modification if want
+    to see the properties of the document 
+
+    the console.dir - prints the sprecial objects methods and properties
+    
+        console.dir(window.document)
+
+so we can acces the HTML in the javascript with the help of DOM (document object model) lies in the window object which is a browser object
+
+    DOM is a tree like STRUCTURE contains NODE of every object and tags of the HTML file follows a hirearchical manner 
+
+Accessing tags via document:
+    - to acces the body of HTML in the JS 
+        console.dir(document.body)
+        - it will return all the properties of body to print the code 
+        console.log(document.body)
+        - the nodelist contains the total number of the tags or nodees in the HTML field
+
+    - console.dir(document.body.childNodes[1])  remember it will return the properties
+        you can acces the nodes like this to view them to change them 
+    - console.log(document.body.childNodes[1])  the log will return the exact content
+
+changing with DOM:
+  document.body.style.background = "blue";      it will changes color to blue
+
+DOM MANIPULATION : 
+    first if we want to make a change we need to acces that tag or the element 
+    to acces the elements
+
+    - selecting the element with ID : we gave the id to the tag in the html 
+        - we represent id as # hash (#heading)
+        - the id is always unique
+        document.getElementId("myid");
+
+    - selecting tht element with class :
+        - we represent class as . dot (.classname)
+        - we use class if want to apply same thing like css in all 
+        - it returns the HTML collection its like array 
+        document.getElementbyclassname("myclass")
+
+    - selecting tht element with tag :
+        document.getElementbytagname("p")
+
+    note: if any class, id, tag is not found they return null or empty array 
+
+    we can use these three ways to acces the elements but we use a level up way to access the elements
+
+* query selector
+    document.querySelector("id/classname/tag")
+        returns first element if contains more than one same tag returns the first one 
+
+    document.querySelectorAll("id/classname/tag")
+        returns nodelist returns all same type of elements
+
+    the nodelist is a list of nodes which is in the document or the DOM in a hirearchical form 
+
+    remember if want to pass the id and the classname we want to pass it with its preceding 
+        document.querySelector(".id")
+        document.querySelector(".classname")
+
+properties of the DOM MANIPULATION
+
+    tagname: simply returns the tag name of the tag 
+    innertext : returns the text content of the element and all its children
+        when the structure is like tree and the div or the body contains lot of items or tags 
+        then we can find based on that with innertext
+    
+        we can also do like this 
+            document.querySelector("div").children
+        and it will the return the list of items and the htmlcollection which is and array 
+    innerHTML: done same thing but returns in HTMl format means the tags are visible 
+    textcontent: returns textual content even for the hidden content
+        simply we can see the hidden content which is in the html 
+    
+Dom part - 2
+
+Attributes :
+
+    getattribute:
+        simply we get the Attributes of the particular tag like its id, name etc..
+
+    setattribute : 
+        simply we can set the attribute by accesing the tag 
+
+    style :
+        the style attribute is to change the css of the particular div 
+    
+insert elements in the DOM :
+
+above we learn how to acces the elements, how to change elements via dom 
+
+now we can insert the elements in the dom 
+
+there are 2 steps to add the insert in the HTMl via DOM 
+    first is to create the element 
+    second is to insert in the HTML page or the in the document via the method 
+        - .append : adds the element end of the node (inside)
+        - .prepend: add the element at the start of the node (inside)
+        - .before: adds before the node (outside)
+        - .after: adds after the node (outside)
+
+    ex :
+        // Step - 1 created the element 
+        let newel = document.createElement("button")
+        newel.innerText = "newbtn"
+
+        // Step -2 inserting the element in the Document 
+        let newbtn = document.querySelector("div")
+        newbtn.append(newel)    // at the end of the node 
+        newbtn.prepend(newel)    // at the start of the node 
+        newbtn.before(newel)    // at before the node 
+        newbtn.after(newel)    // at after the node 
+
+remove in the DOM :
+    node.remove: it removes the node but first you need to acces the node 
+
+classlist:
+    collection of the class attributes of the elements
+    to add new class in the classlist we use .add(classname) to add in the particular tag    
