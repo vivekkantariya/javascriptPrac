@@ -193,16 +193,26 @@ string methods in JS : built in methods in string
     str.toUpperCase()
     str.toLowerCase()
     str.trim()  removes whitespaces
-    .slice(start,end)
+    .slice(start,end)       negative values allowed
+    .substring(start,end)       negative values not allowed 
     .concat(stirng)
     .replace(string,newstring)      if contains multiple same characters it will replace first one 
     .replaceall(string,newstring)   change all same characters 
     .charat(idx)
+    .indexof(passthecharacter)
+    .includes() :     if it contains something
+    .split() : takes a pattern and divids the string into that pattern separated 
 
     all the methods just return the view they cannot update the original string 
     they always return new string they don't change the original one 
 
     because strings are immutable in JS 
+
+Number methods in JS :
+    .tostring() : to covert in the string 
+    .toficed(number): fixed number return 
+    .toprecision(number): only that number returns if more than that it will convert into exponential 
+    .tolocalestring(): returns with diff by ',' if the number is large like 1000000 by default ',' are US standards 
 
 arrays in JS : Collection of items
 
@@ -528,4 +538,79 @@ remove in the DOM :
 
 classlist:
     collection of the class attributes of the elements
-    to add new class in the classlist we use .add(classname) to add in the particular tag    
+    to add new class in the classlist we use .add(classname) to add in the particular tag  
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+BY HITESH : INTERVIEW LEVEL THINGS 
+console.table([]): can pass multiple variables here.
+
+prefer not to use var because of issue in block scope and functional scope 
+
+null is a standalone value, null means empty (khali) 
+
+ECMA : is the official Documentation of the JS 
+
+conversion :
+    "33" => 33
+    "33abc" => NaN (Not a Number)
+
+MEME :
+    console.log(1+2)        // 3
+    console.log("1"+2)      // 12
+    console.log(1+"2")      // 12
+    console.log("1"+2+3)       // 123
+    console.log(1+2+"3")        // 33
+
+    these all are differents
+
+    if the string is first then it will just add it 
+    if the number is first then it will do operations 
+
+    read in the ecma primitive  
+
+the comparison operator(>,<,>=,<=) and the equality check(==) operator worked differently in jS
+    comparison converts null to a number treating it has 0 
+
+because the JS language is inconsistent we may see this type of bugs.
+
+in the official Documentation the THe JS datatypeis divided into two types only 
+    - primitive : call by value that means we always get the copy of the value so all the changes will happen it will happen in the copy 
+        string, number, Boolean, null, undefined, symbol, bigint
+    
+    - non primitive: also called reference type 
+        direct allocate the reference of this type 
+        array, objects, functions
+
+note : in js there is not a special datatype of decimal or float in JS number is a number 
+    - the symbol is uded for to store every variable as a unique mostly used in the react 
+    - to use bigint after the number simply put the n ex: 54634934686464876n
+
+the difference is made upon how the data is stored in the memory and how it can access from the memory 
+
+is JS is Dynamicaaly typed language or static typed language:
+    JS is Dynamicaaly typed language here we are not defining our datatypes in runtime it will automatically determine the type of language 
+
+stack and heap memory :
+    JS is also follows garbage collection kindof 
+
+    stack memory is used in all primitive datatypes 
+        whenever the stack memory is used we get the copy of the variable or value
+    
+    the heap memory is used in non-primitive datatypes
+        and whenever the heap memory is used we get the original reference of the variable or value
+
+includes Maths library:
+    contains lot of inbuilt function related to math
+
+    some methods 
+      .abs(): absolute value, turns neg value into positive 
+      .round(): round off the value
+      .ciel(): returns the cieling value ex: if the value is above 4 ie. 4.2 it returns 5
+      .floor(): returns the flooring value ex: if the value is above 4 ie. 4.9 it returns 4
+      .random(): returns the random value lies in between 0 and 1 
+        so we * it with 10 so the value is shift by 1 digit 
+        - sometimes it give 0 so by these we add + 1
+
+        other formula  :
+            math.random() * (max - min +1 ) + min 
+                for the range 
