@@ -78,6 +78,8 @@ Data types in JS:
             student["name"]
         - it will return vivek
         - also can access with dot operator "." student.age
+        - Object.freeze(variablename)
+            it will freeze the object and after that any modification will not happen 
 
     we can update const object keys 
 
@@ -255,6 +257,14 @@ Array methods in JS :
 
     splice : change original array 
         splice(startindex, deleteelementno, addelementno);
+
+    .flat : returns a new array with all sub array 
+
+    .includes:
+
+    .indexof:
+
+    .join:  returns the string after the join 
 
 Functions in JS:
     block of code that performs a specific task, can be invoked whenever needed 
@@ -614,3 +624,80 @@ includes Maths library:
         other formula  :
             math.random() * (max - min +1 ) + min 
                 for the range 
+
+Array :
+    A shallow copy of an object is a copy whose properties share the same references
+
+    A deep copy measn of an object is a copy whose properties do not share the same references
+
+    the unshift function or the method add's the value to the first or the begining but it shifts all the values to the next 
+        you want to shift the all values it is not a optimized way to do 
+
+    to merge 2 arrays :
+        the push method pushed the whole array in one array 
+        the concat will work properly 
+        the spread method in JS used like this ...arrayone, ...arraytwo 
+
+    Array.from(passtheprimitiveobject): convert the object into array
+
+    Array.of : returns a new array from a set of elements 
+        when you have multiple variable of elements
+
+    Array.isarray : checks that the array is an array 
+
+objects:
+    we can declare objects in two ways
+        - objects literal : Can be reused as a singleton, but not always intended that way. multiple instances 
+            exammple :
+
+            let myobj = {
+                name : "vivek",
+                age : 20,
+                mail : "email"
+            }
+
+            myobj.mail
+            myobj["name"]
+
+        - constructor 
+            singleton : when make an object from the constructor it is singleton. 
+                An object designed to have only one instance in the entire application.
+
+    Object methods :
+        .assign(): for merginf two objects 
+        .keys : 
+        .values : 
+        .entries : every key value pair is converted in the array 
+        .hasOwnPropery : checks if the key is exist or not 
+
+    to use the symbol datatype in the object used in [] brackets 
+
+    destructor in objects :
+
+       let course = {
+            coursename : "JS",
+            price : "3364",
+            author : "vivek",
+       };
+
+       const {author} = course
+       console.log(author)
+
+function :
+    functionname is only the reference to the function 
+    when the functionname is with the () then and then it will execute otherwise only name is the reference of the function
+
+    diff between parameters and argumets 
+        parameters: when we are creating a function and passed the param in the () is callled parameters
+
+        argumets: when we are passing the param while calling the function is called the argumets
+
+    when the number of parameters are not fixed so we use rest operator (...) we also use this has spread operator based on the usecase JS decides which one i sthis 
+
+    exammple: 
+        function cart(...num1) {
+            return num1
+        }
+
+        console.log(cart(200,400,500,600,800,700,202))
+            returns a array 
