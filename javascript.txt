@@ -329,7 +329,19 @@ ArroW function :
     the function and the method are the two different terms but looked liked same 
     
     if the functioni is associated with the object then it is a method otherwise it is a function only 
-    the .toUpperCase is a function itself but wehn we bind with string the it will become method and many more like that 
+    the .toUpperCase is a function itself but wehn we bind with string the it will become method and many more like that
+
+IIFE:   (Imediately invoked function expression)
+    just wrap the function in the () parenthesis    
+       (function chai(){
+            console.log("Drink tea")
+        })();
+
+        the function is IIFE now we don't want to execute it it executes automatically evrytime but one time per run 
+
+        the main reason is many time becuase of global scope pollution so to prevent that we use IIFE 
+
+        here we need the semicolon to end ;
 
 ForEach loop :
     Note : a callback function passed as an argument to another function 
@@ -357,6 +369,8 @@ ForEach loop :
     can only be used for arrays not for stirngs
 
     foreach does not create any new array it just returns new view 
+    means foreach will not return anything if you want to store that in a variable and print that it will return nothing and output is undefined
+
 note : higher order function/methods : 
     are the function or the methods that either take another function has a parameter inside or they return another function has there output
 
@@ -701,3 +715,81 @@ function :
 
         console.log(cart(200,400,500,600,800,700,202))
             returns a array 
+
+    this keyword: when we are refering current context we are using this keyword, when we don't want to hardcode the value of the context 
+
+    the window object is the global object 
+
+    when we declare funtion in one line is called implicit return
+        let addtwo = (num1,num2) => num1 + num2
+        the name implicit return is because we dont need to write return here 
+        when we use {} we need to write return keyword
+
+    
+javascript Execution context :how the JavaScript engine processes code and keeps track of what is currently running.
+
+    TYpes of execution context
+    - global execution context/global environment : whenever the code runs it goes to global exceution and allocated to this keyword always happen in every code on matter big or small 
+            only one global execution context per program this refers to the global object (window in browsers).
+    - function execution context
+        Created each time a function is invoked.
+        Each function has its own execution context.
+        New context is pushed onto the call stack
+
+    Phases of execution context:
+        Creation phase :
+            variables and functions are stored in the memory
+            this keyword is defined
+
+        Execution phase :
+            code is executed line by line and variables are assigned values 
+            functions are invoked
+
+        after the execution of execute phase the variable or the output returned to the global execution context 
+    
+    JavaScript uses a Call Stack to manage execution contexts:
+        The Call Stack is a data structure used by the JavaScript engine to keep track of function calls—what function is currently running, and what to return to when it finishes.
+        follows a lifo 
+
+        How It Works
+            When a function is called, it's added (pushed) to the top of the stack.
+            When the function finishes, it's removed (popped) from the stack.
+            The engine always runs the function on top of the stack.
+
+    javascript is a single threaded everthings is a thread and a single process 
+
+control flow :
+    implicit scope : writing in one line 
+
+    falsy values :
+        false, 0, -0, bigint 0n, "", null, undefined, NaN
+    
+    truthy values :
+        "0", 'false', " ", [], {}, function(){}
+
+    false == 0
+        true 
+    false == ''
+        true 
+    0 == ''
+        true 
+
+    null coalescing operator (??) : for null and undefined
+
+    whenever sometimes the values like null and undefined datatype received we need to handle that 
+    so to handle this null coalescing operator is use 
+
+    ex :
+        let val1;
+        val1 = 5 ?? 10;                     // assign 5
+        val1 = null ?? 10;                  // assign 10
+        val1 = undefined ?? 10;             // assign 10
+
+    break : when we want to break the control flow 
+        like some value is detected now break the flow no further execution 
+    continue : skip the condition 
+
+MAP : the map object holds the key value pair and remember the original insertion of order of the keys.
+    map is unique and the oder is original 
+
+    we can do map chanining .map().map().filter() just like that 
